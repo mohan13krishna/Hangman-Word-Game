@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Word Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="text-center my-4">
+            <h1 class="display-4 fw-bold text-primary">Hangman</h1>
+            <p class="lead text-muted">Guess the word before the hangman appears!</p>
+        </header>
+
+        <div class="game-settings card shadow-lg p-4 mb-4" id="settingsPanel">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="category" class="form-label fw-semibold">Category:</label>
+                    <select id="category" class="form-select">
+                        <option value="animals">Animals</option>
+                        <option value="countries">Countries</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="sports">Sports</option>
+                        <option value="movies">Movies</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="difficulty" class="form-label fw-semibold">Difficulty:</label>
+                    <select id="difficulty" class="form-select">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+            <button id="startGame" class="btn btn-primary btn-lg mt-3 w-100">Start Game</button>
+        </div>
+
+        <div class="game-container card shadow-lg p-4 mb-4" id="gameContainer" style="display: none;">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-4 text-center">
+                    <div class="hangman-container bg-light rounded p-3">
+                        <svg id="hangman" viewBox="0 0 200 200" width="200" height="200">
+                            <line id="hangman-base" x1="20" y1="180" x2="180" y2="180" stroke-width="4" stroke="black" />
+                            <line id="hangman-pole" x1="60" y1="20" x2="60" y2="180" stroke-width="4" stroke="black" />
+                            <line id="hangman-top" x1="60" y1="20" x2="140" y2="20" stroke-width="4" stroke="black" />
+                            <line id="hangman-rope" x1="140" y1="20" x2="140" y2="40" stroke-width="4" stroke="black" />
+                            <circle id="hangman-head" cx="140" cy="55" r="15" stroke-width="4" stroke="black" fill="transparent" style="display: none;" />
+                            <line id="hangman-body" x1="140" y1="70" x2="140" y2="120" stroke-width="4" stroke="black" style="display: none;" />
+                            <line id="hangman-left-arm" x1="140" y1="80" x2="120" y2="100" stroke-width="4" stroke="black" style="display: none;" />
+                            <line id="hangman-right-arm" x1="140" y1="80" x2="160" y2="100" stroke-width="4" stroke="black" style="display: none;" />
+                            <line id="hangman-left-leg" x1="140" y1="120" x2="120" y2="150" stroke-width="4" stroke="black" style="display: none;" />
+                            <line id="hangman-right-leg" x1="140" y1="120" x2="160" y2="150" stroke-width="4" stroke="black" style="display: none;" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="game-info d-flex flex-column gap-2">
+                        <span class="badge bg-info text-dark" id="difficultyBadge">Medium</span>
+                        <span class="badge bg-purple" id="categoryBadge">Animals</span>
+                        <div class="attempts fs-5 fw-semibold">Attempts left: <span id="attemptsLeft">6</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="word-container d-flex justify-content-center gap-2 flex-wrap my-4" id="wordContainer"></div>
+            <div class="hint-display text-center mb-3" id="hintDisplay"></div>
+            <div class="keyboard d-flex flex-wrap justify-content-center gap-2 mb-4" id="keyboard"></div>
+
+            <div class="game-controls d-flex flex-wrap gap-2">
+                <button id="newWord" class="btn btn-secondary flex-grow-1">New Word</button>
+                <button id="hintBtn" class="btn btn-warning flex-grow-1">Show Hint</button>
+                <button id="backToSettings" class="btn btn-outline-secondary flex-grow-1">Back to Settings</button>
+            </div>
+        </div>
+
+        <div class="modal fade" id="resultModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-3" id="resultTitle">You Won!</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p id="resultMessage">The word was: <span id="correctWord" class="fw-bold text-primary">EXAMPLE</span></p>
+                        <div class="d-flex justify-content-around">
+                            <div class="text-center">
+                                <span class="d-block text-muted">Score</span>
+                                <span id="score" class="fs-4 fw-bold">0</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="d-block text-muted">Attempts Left</span>
+                                <span id="finalAttempts" class="fs-4 fw-bold">3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="playAgain" class="btn btn-primary w-100">Play Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
