@@ -10,7 +10,7 @@ https://mohan13krishna.github.io/Hangman-Word-Game/
 - **Three Difficulty Levels**: Easy, Medium, and Hard, affecting word complexity and scoring 
 - **Responsive Design**: Fully optimized for both desktop and mobile devices
 - **Interactive Gameplay**: On-screen keyboard with visual feedback and support for physical keyboard input
-- **SVG Hangman Visualization**: Progressive hangman drawing that updates with each incorrect guess
+- **SVG Hangman Visualization**: Progressive hangman drawing that updates with each incorrect guess 
 - **Score System**: Points awarded based on difficulty, word length, and remaining attempts
 - **Modern UI**: Clean and intuitive interface with smooth animations and transitions
 
