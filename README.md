@@ -1,7 +1,7 @@
 # Hangman Word Game
 
 A responsive, interactive Hangman word game with multiple categories and difficulty levels, built with HTML, CSS, and vanilla JavaScript.
- 
+  
 https://mohan13krishna.github.io/Hangman-Word-Game/ 
  
 ## Features 
