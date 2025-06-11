@@ -4,7 +4,7 @@ A responsive, interactive Hangman word game with multiple categories and difficu
   
 https://mohan13krishna.github.io/Hangman-Word-Game/ 
  
-## Features 
+## Features  
  
 - **Multiple Word Categories**: Choose from Animals, Countries, Fruits, Sports, and Movies 
 - **Three Difficulty Levels**: Easy, Medium, and Hard, affecting word complexity and scoring 
