@@ -79,7 +79,7 @@ const difficultyMultiplier = difficulty === 'easy' ? 1 : difficulty === 'medium'
 - Mobile browsers (iOS Safari, Android Chrome)
 
 ## Future Enhancements
-
+ 
 - Local storage for high scores
 - Timer-based gameplay mode
 - Multiplayer functionality
